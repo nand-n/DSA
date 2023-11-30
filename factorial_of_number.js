@@ -11,12 +11,11 @@
 
 const factorial = (n)=>{
 
-    let fac = 1
-
-    for(i=2; i<=n; i++){
-        fac*=i
+    if(n==0){
+        return 1
     }
-    return fac
+    return n* factorial(n-1)
+
 }
 
 console.log(factorial(3));

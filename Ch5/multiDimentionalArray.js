@@ -50,3 +50,32 @@ console.log(spiralPrint([
             [11, 12, 13, 14, 15],
             [16, 17, 18, 19, 20]
         ]));
+
+
+//rotate matrix 90 deg
+
+const matrix = [[1.0,1],[0,0,1], [1,1,1]]
+
+function rotateMatrix90Left(mat){
+    var N = mat.length
+    //consider all square one by one 
+    for(var x =0; x<N/2; x++){
+        //consider elements in group of 4 in 
+        // current square
+        for(var y=x;y<N-x-1;y++){
+            //store temp variables 
+            var temp = mat[x][y]
+            //move values form right to top
+            mat[x][y]= mat[y][N-1-x]
+
+            //move values form botom to right 
+            mat[y][N-1-x] = mat[N-1-x][N-1-y]
+            //move values from left to bottom 
+            mat[N-1-x][N-1-y] =mat[N-1-y][x]
+            //assign temp to left 
+            mat[N-1-y][x] = temp
+        }
+    }
+}
+ rotateMatrix90Left(matrix);
+console.log(matrix);

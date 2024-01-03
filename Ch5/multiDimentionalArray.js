@@ -54,7 +54,7 @@ console.log(spiralPrint([
 
 //rotate matrix 90 deg
 
-const matrix = [[1.0,1],[0,0,1], [1,1,1]]
+let matrix = [[1.0,1],[0,0,1], [1,1,1]]
 
 function rotateMatrix90Left(mat){
     var N = mat.length

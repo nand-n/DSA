@@ -38,3 +38,21 @@ var setA = new Set([1, 2, 3, 4]),setB = new Set([2, 3]),setC = new Set([5]);
 
 console.log("Is super set : ",isSuperSet(setA , setB));
 
+//union : combines the elements form both sets 
+
+function unionSet (setA ,setB){
+    let union = new Set(setA)
+    for(let elem of setB){
+        union.add(elem)
+    }
+    return union
+}
+
+//difference 
+function differenceSet(setA ,setB){
+    let difference = new Set(setA)
+    for(let elem of setB){
+        difference.delete(elem)
+    }
+    return difference
+}

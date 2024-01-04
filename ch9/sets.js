@@ -56,3 +56,24 @@ function differenceSet(setA ,setB){
     }
     return difference
 }
+
+//returning all unique values from separate array 
+{/**with some of the same values , return one array that has all the 
+    unique elements from both of the orginal arrays 
+
+    Given two array 
+*/}
+
+function uniqueList(arr1, arr2){
+    let mySet = new Set(arr1.concat(arr2))
+    return Array.from(mySet)
+}
+
+console.log(uniqueList([1,1,2,2],[2,3,4,5]));
+
+//check duplicated values in array using an array
+
+function checkDuplicated(arr){
+    let mySet = new Set(arr)
+    return mySet.size < arr.length
+}

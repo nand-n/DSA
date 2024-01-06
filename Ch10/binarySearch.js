@@ -9,7 +9,8 @@ function binarySearch(arr,n){
     }else{
         highIndex = midIndex
     }
+   return false
    }
 }
 
-console.log(binarySearch([1,2,3,4], 4));
+console.log(binarySearch([1,2,3,4], 1));

@@ -5,3 +5,4 @@
  In js Objects works on defining a key (propery) and its associated value
 */}
 
+//hash table contains two main functions put() and get()

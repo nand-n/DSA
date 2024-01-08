@@ -15,5 +15,42 @@
         1, Deterministic : Equal keys produce equal hash values 
         2, Efficency : it should be O(1) in time complexity 
         3, Uniform distribution L it makes the most use of the array 
-        
+
 */} 
+
+function hashTable(size){
+    this.size= size;
+    this.keys = this.initArray(size)
+    this.values = this.initArray(size)
+    this.limit = 0;
+}
+hashTable.prototype.put = function(key , value){
+    if(this.keys.limit >= this.size) throw 'hash table is full'
+    let hashIndex = this.hash(key)
+
+    //leanrear probing 
+    while (this.keys[hashIndex] != null){
+        hashIndex++
+        hashIndex = hashIndex % this.size
+    }
+
+    this.keys[hashIndex] = key
+    this.values[hashIndex] = value
+    this.limit++
+}
+hashTable.prototype.hash = function (key){
+    //check if int 
+    if(!Number.isInteger(key)) throw 'must  be integer'
+    return key % this.size
+}
+
+hashTable.prototype.initArray = function(size){
+    let array =[]
+    for(let i = 0; i<size; i++){
+        array.push(null)
+    }
+    return array
+}
+
+let exampleTable  = new hashTable(13)
+console.log(exampleTable.put(7 , 'hi'));

@@ -54,3 +54,27 @@ hashTable.prototype.initArray = function(size){
 
 let exampleTable  = new hashTable(13)
 console.log(exampleTable.put(7 , 'hi'));
+
+//using quadratic probing 
+hashTable.prototype.put = function (key , value){
+    if(this.limit >= this.size) throw 'hash table is full'
+    let hashedIndex = this.hash(key) , squareIndex = 1;
+
+    //quadratic probing 
+    while(this.keys[hashedIndex] !=null){
+        hashTable+=Math.pow(squareIndex , 2)
+        hashedIndex
+        squareIndex++;
+    }
+    this.keys[hashedIndex] = key
+    this.values[hashedIndex] = value
+    this.limit++;
+}
+hashTable.prototype,get = function (key){
+    let hashedIndex = this.hash(key) , squareIndex = 1;
+    while(this.keys[hashedIndex] != key){
+        hashedIndex = hashedIndex % this.size
+        squareIndex++
+    }
+    return this.values[hashedIndex]
+}

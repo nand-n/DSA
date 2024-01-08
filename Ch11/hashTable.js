@@ -7,3 +7,7 @@
 
 //hash table contains two main functions put() and get()
 //hashing techniques 
+{/**
+    The most important part of hashing is the hash function 
+    
+*/}

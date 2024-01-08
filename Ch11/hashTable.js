@@ -78,5 +78,3 @@ hashTable.prototype,get = function (key){
     }
     return this.values[hashedIndex]
 }
-
-//THings have to be corrected 

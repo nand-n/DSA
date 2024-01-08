@@ -79,6 +79,3 @@ hashTable.prototype,get = function (key){
     return this.values[hashedIndex]
 }
 
-//Not working this have to be done 
-//The hasing chapter have to be read again and agian 
-//because it is important 

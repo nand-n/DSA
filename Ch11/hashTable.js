@@ -6,3 +6,4 @@
 */}
 
 //hash table contains two main functions put() and get()
+//hashing techniques 

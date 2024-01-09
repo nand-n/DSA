@@ -3,39 +3,55 @@
     Stack is a data structure in which the last inserted element can be removed 
     and accessed.
 
-    example think about stacking plates on a table . to get to the bottom on e you must remove all the the other onece on the top . 
+    example think about Stacking plates on a table . to get to the bottom on e you must remove all the the other onece on the top . 
     LIFO last in firt out 
 
 */}
 
-function stack(arr){
+function Stack(arr){
     this.arr =[]
     if(arr) this.arr = arr
 }
 
-stack.prototype.getBuffer = function (){
+Stack.prototype.getBuffer = function (){
     return this.arr.slice()
 }
-stack.prototype.isEmpty = function (){
+Stack.prototype.isEmpty = function (){
     return this.arr.length == 0
 }
 
-let stack1 = new stack()
-console.log(stack1);
+let Stack1 = new Stack()
+console.log(Stack1);
 
-//peek the last element in the stack 
+//peek the last element in the Stack 
 
-stack.prototype.peek = function(){
+Stack.prototype.peek = function(){
     return this.arr[this.arr.length -1]
 }
 
 //insertion : can be done via the push function natively
-stack.prototype.push = function(value){
+Stack.prototype.push = function(value){
     this.arr.push(value)
 }
 
 //deletion 
 
-stack.prototype.pop = function (){
+Stack.prototype.pop = function (){
     return this.arr.pop()
 }
+
+//Access 
+function stackAccessNthTopNode(stack , n){
+    let bufferArray = stack.getBuffer()
+    if(n<=0) throw 'error'
+    let bufferStack = new Stack(bufferArray)
+
+    while(--n!==0){
+        bufferStack.pop()
+    }
+    return bufferStack.pop()
+}
+
+let stack2 = new Stack()
+
+stack2.push(1)

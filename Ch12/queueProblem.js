@@ -25,3 +25,15 @@ Cashier.prototype.deliverOrder=function(){
     let finishedCustomer = this.customres.deque()
     console.log(finishedCustomer.name );
 }
+
+
+let cashier = new Cashier()
+let customer1 = new Customer('jim' , 'fries')
+let customer2 = new Customer('samie' , 'burger')
+
+
+cashier.addOrder(customer1)
+cashier.addOrder(customer2)
+
+cashier.deliverOrder()
+cashier.deliverOrder()

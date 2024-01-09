@@ -33,3 +33,9 @@ stack.prototype.peek = function(){
 stack.prototype.push = function(value){
     this.arr.push(value)
 }
+
+//deletion 
+
+stack.prototype.pop = function (){
+    return this.arr.pop()
+}

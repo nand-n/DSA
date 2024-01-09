@@ -55,3 +55,15 @@ function stackAccessNthTopNode(stack , n){
 let stack2 = new Stack()
 
 stack2.push(1)
+
+//Searching a stack data structure 
+function stackSrearch(stack , element){
+    let bufferArray = stack.getBuffer()
+    let bufferStack = new Stack(bufferArray)
+    while(!bufferStack.isEmpty()){
+        if(bufferStack.pop()==element){
+            return ture
+        }
+    }
+    return flase
+}

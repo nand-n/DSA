@@ -9,3 +9,19 @@ Queue.prototype.getBuffer = function(){
 Queue.prototype.isEmpty = function (){
     return this.arr.length == 0
 }
+
+//peek 
+Queue.prototype.peek = function(){
+    return this.arr[o]
+}
+
+//Insersion
+Queue.prototype.enqueue = function(val){
+    return this.arr.push(val)
+}
+
+//Deletion
+Queue.prototype.deque = function(){
+    return this.arr.shift()
+}
+

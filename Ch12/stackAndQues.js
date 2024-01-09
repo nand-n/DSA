@@ -22,3 +22,14 @@ stack.prototype.isEmpty = function (){
 
 let stack1 = new stack()
 console.log(stack1);
+
+//peek the last element in the stack 
+
+stack.prototype.peek = function(){
+    return this.arr[this.arr.length -1]
+}
+
+//insertion : can be done via the push function natively
+stack.prototype.push = function(value){
+    this.arr.push(value)
+}

@@ -32,3 +32,17 @@ let dll1 = new DoublyLinkedList();
 dll1.insertAtHead(10); // ddl1's structure: tail: 10  head: 10
 dll1.insertAtHead(12); // ddl1's structure: tail: 10  head: 12
 dll1.insertAtHead(20); // ddl1's structure: tail: 10  head: 20
+
+//Insersion at the tail 
+DoublyLinkedList.prototype.insertAtTail = function(value){
+    if(this.tail == null){
+        this.tail = new DoublyLinkedListNode(value)
+        this.head = this.tail
+    }else{
+        let temp = new DoublyLinkedListNode(value)
+        temp.prev = this.tail
+        this.tail.next = temp
+        this.tail = temp
+    }
+    this.size++
+}

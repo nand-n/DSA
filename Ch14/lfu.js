@@ -31,6 +31,7 @@ function LFUCache(capacity){
     What caching is and why we need caching
     caching is a mechanism of storing data in memory 
     there are two main types of caching algorithm 
-    LFU and L
+    LFU 
+    LRU 
 
 */}

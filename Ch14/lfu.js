@@ -28,4 +28,7 @@ function LFUCache(capacity){
     Linked list is just a data structure that have every element 
     points the next or the previos element 
     
+    What caching is and why we need caching
+
+    
 */}

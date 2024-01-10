@@ -23,3 +23,9 @@ function LFUCache(capacity){
     this.size = 0
 }
 
+{/** 
+    Why linked list  is basic and important to know?
+    Linked list is just a data structure that have every element 
+    points the next or the previos element 
+    
+*/}

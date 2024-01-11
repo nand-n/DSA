@@ -11,7 +11,7 @@ function BinaryTreeNode(value){
 }
 //binary tree alwaays has a  root node(the node at the top) which initialized to null before any element is inserted
 function BinaryTree(){
-    this.root = null
+    this._root = null
 }
 
 BinaryTree.prototype.traverePreorder = function(){
@@ -23,5 +23,27 @@ BinaryTree.prototype.traverePreorder = function(){
         console.log(node.value);
         traverePreorderHelper(node.left)
         traverePreorderHelper(node.right)
+    }
+}
+
+BinaryTree.prototype.traversalPreorderIterative = function(){
+    let nodeStack = []
+    nodeStack.push(this._root)
+    //pop all items one by one 
+        // print it 
+        //push its right child 
+        //push its left child 
+    //right child is pushed first so that left is processed first 
+    while  (nodeStack.length){
+        //pop the top item from the stack and print 
+        let node = nodeStack.pop()
+        console.log(node.value);
+        //push right and left children of the popped node to stack 
+        if(node.right){
+            nodeStack.push(node.right)
+        }
+        if(node.left){
+            nodeStack.push(node.left)
+        }
     }
 }

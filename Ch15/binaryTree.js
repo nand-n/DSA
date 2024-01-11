@@ -4,3 +4,8 @@ function TreeNode (value){
     this.childern =[]
 }
 //Binary tree
+function BinaryTreeNode(value){
+    this.value = value
+    this.left = null
+    this.right = null
+}

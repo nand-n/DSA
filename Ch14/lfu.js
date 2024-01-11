@@ -50,3 +50,5 @@ LFUDoublyLinkedList.prototype.removeNode = function (node){
     node.next.prev = node.prev
     this.size--
 }
+
+//LRU (Least Recently used caching)

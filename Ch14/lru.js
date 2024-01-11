@@ -28,3 +28,34 @@ LRUCache.prototype.addNode = function(node){
      node.next = this.tail
 }
 
+//add and set 
+LRUCache.prototype.get = function(key){
+    let node = this.keys[key]
+    if(node == undefined){
+        return null
+    }else{
+        this.removeNode(node)
+        this.addNode(node)
+        return node.data
+    }
+}
+
+LRUCache.prototype.set = function(key , value){
+    let node = this.keys[key]
+    if(node){
+        this.removeNode(node)
+    }
+    let newNode = new DLLNode(key , value)
+    this.addNode(newNode)
+    this.keys[key] = newNode
+
+    this.addNode(newNode)
+    this.keys[key] = newNode
+
+    //evict a node 
+    if(Object.keys(this.keys).length > this.capacity){
+        let realHead = this.head.next
+        this.removeNode(realHead)
+        delete this.keys[realHead.key]
+    }
+}

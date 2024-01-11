@@ -59,3 +59,16 @@ LRUCache.prototype.set = function(key , value){
         delete this.keys[realHead.key]
     }
 }
+
+let myLRU = new LRUCache(5)
+
+
+myLRU.set(1,1)
+myLRU.set(2,2)
+myLRU.set(3,2)
+
+console.log("Nodes :",myLRU );
+
+
+
+

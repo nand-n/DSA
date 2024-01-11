@@ -35,3 +35,18 @@ function LFUCache(capacity){
     LRU 
 
 */}
+
+//Insersion 
+LFUDoublyLinkedList.prototype.insertAtHead = function(node){
+    node.next = this.head.next
+    this.head.next.prev = node 
+    this.head.next = node 
+    node.prev - this.head 
+    this.size++
+}
+
+LFUDoublyLinkedList.prototype.removeNode = function (node){
+    node.prev.next = node.next
+    node.next.prev = node.prev
+    this.size--
+}

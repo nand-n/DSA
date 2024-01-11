@@ -31,7 +31,6 @@ BinaryTree.prototype.traversalPreorderIterative = function(){
     nodeStack.push(this._root)
     //pop all items one by one 
         // print it 
-        //push its right child 
         //push its left child 
     //right child is pushed first so that left is processed first 
     while  (nodeStack.length){

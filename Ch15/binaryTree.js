@@ -13,3 +13,15 @@ function BinaryTreeNode(value){
 function BinaryTree(){
     this.root = null
 }
+
+BinaryTree.prototype.traverePreorder = function(){
+    traverePreorderHelper(this._root)
+    function traverePreorderHelper(node){
+        if(!node){
+            reutrn
+        }
+        console.log(node.value);
+        traverePreorderHelper(node.left)
+        traverePreorderHelper(node.right)
+    }
+}

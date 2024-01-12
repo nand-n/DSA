@@ -94,3 +94,27 @@ BinaryTree.prototype.postOrderTraversal =function(){
         console.log(node.value);
     }
 }
+//postOrderTaversal using iterative 
+BinaryTree.prototype.traversePostOrderIterative = function(){
+    //create two stack 
+    let s1 = [] , s2 = [];
+    //push root to first stack 
+    s1.push(this._root)
+    //run while first stack is not empty 
+    while(s1.length){
+        //pop an item from s1 and append it to s2
+        let node = s1.pop()
+        s2.push(node)
+        //push left and right children of removed item to s1
+        if(node.left){
+            s1.push(node.left)
+        }
+        if(node.right){
+            s1.push(node.right)
+        }
+    }
+    while(s2.length){
+        let node = s2.pop()
+        console.log(node.value);
+    }
+}

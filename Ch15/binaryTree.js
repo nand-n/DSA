@@ -134,3 +134,7 @@ BinaryTree.prototype.traverseLevelOrder = function(){
         }
     }
 }
+//Tree traversal summary
+{/**
+    
+*/}

@@ -59,3 +59,24 @@ BinaryTree.prototype.traversInOrder = function(){
         traverseInOrderHelper(node.right)
     }
 }
+BinaryTree.prototype.traverseInOrderIterative = function(){
+    let current  = this._root , s =[] , done = false ;
+    while(!done){
+        //Reach the left most node of the current node
+        if(current !== null){
+            //place pointers to a tree node on the stack 
+            //before traversing the node's left subtree
+            s.push(current)
+            current = current.left
+        }else{
+            if(s.length){
+                current = s.pop()
+
+                console.log(current.value);
+                current = current.right
+            }else{
+                done = true
+            }
+        }
+    }
+}

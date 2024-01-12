@@ -80,3 +80,17 @@ BinaryTree.prototype.traverseInOrderIterative = function(){
         }
     }
 }
+
+//PostOrderTraversal
+BinaryTree.prototype.postOrderTraversal =function(){
+    traversePostOrderHelper(this._root)
+    function traversePostOrderHelper(node){
+        if(node.left){
+            traversePostOrderHelper(node.left)
+        }
+        if(node.right){
+            traversePostOrderHelper(node.right)
+        }
+        console.log(node.value);
+    }
+}

@@ -118,3 +118,19 @@ BinaryTree.prototype.traversePostOrderIterative = function(){
         console.log(node.value);
     }
 }
+BinaryTree.prototype.traverseLevelOrder = function(){
+    //Breath first search
+    let root = this._root , queue =[]
+    if(!root) return 
+    queue.push(root)
+    while(queue.length){
+        let temp = queue.shift()
+        console.log(temp.value);
+        if(temp.left){
+            queue.push(temp.left)
+        }
+        if(temp.right){
+            queue.push(temp.right)
+        }
+    }
+}

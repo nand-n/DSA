@@ -47,3 +47,15 @@ BinaryTree.prototype.traversalPreorderIterative = function(){
         }
     }
 }
+//In-Order-Traversal 
+BinaryTree.prototype.traversInOrder = function(){
+    traverseInOrderHelper(this._root)
+    function traverseInOrderHelper(node){
+        if(!node){
+            return
+        }
+        traverseInOrderHelper(node.left)
+        console.log(node.value);
+        traverseInOrderHelper(node.right)
+    }
+}

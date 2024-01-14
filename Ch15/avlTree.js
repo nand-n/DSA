@@ -137,3 +137,48 @@ AVLTree.prototype.insert = function (value){
        if(childInsered == true) this.setDepthBasedOnChildren()
        return childInsered
 }
+
+//Deletion 
+AVLTree.prototype.remove= function(value){
+    return deleteRecursively(this , value)
+    function deleteRecursively(root , value){
+        if(!root){
+            return null
+        }else if(value<root.value){
+            root.left = deleteRecursively(root.left , value)
+        }else if(value > root.value){
+            root.right = deleteRecursively(root.right , value)
+        }else{
+            //no child 
+            if(!root.left && !root.right){
+                return null //case 1
+            }else if(!root.left){
+                root = root.left
+                return root
+            }else if(!root.right){
+                root = root.right
+                return root
+            }else{
+                let temp = findMin(root.right)
+                root.value = temp.value
+                root.right = deleteRecursively(root.right , temp.value)
+                return root
+            }
+            function findMin(root){
+                while(root.left) root = root.left
+                return root
+            }
+        }
+    }
+}
+
+
+var avlTest = new AVLTree(1,'');
+avlTest.insert(2);
+avlTest.insert(3);
+avlTest.insert(4);
+avlTest.insert(5);
+avlTest.insert(123);
+avlTest.insert(203);
+avlTest.insert(2222);
+console.log(avlTest);

@@ -44,3 +44,27 @@ AVLTree.prototype.rotateLL = function(){
     this.getDepthFromChild()
 }
 
+//rotate to right
+{/**
+    First get the left child and store it (the orginal left child)
+    The orgial left child is to be the parent of the node now.
+    Set the node's left child to be the orginal left child's left child 
+    Finally , set the right child of the left ch9ild to be the node 
+*/}
+
+AVLTree.prototype.rotateRR = function(){
+    //the right side is too long  => rotate from the right (_not_ rightwards)
+    let valueBefore = this.value
+    let leftBefore = this.left
+    this.value = this.right.value
+
+    this.left=this.right 
+    this.right = this.left
+    this.value = this.right.value
+
+    this.left = this.right
+    this.right = this.right.right
+    this.left.right = this.left.left
+    this.left.left =leftBefore
+    this.left.value= valueBefore
+}

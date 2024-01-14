@@ -106,3 +106,34 @@ AVLTree.prototype.balance = function(){
         this.rotateRR()
     }
 }
+
+//Insersion 
+{/**
+    Inserstion in AVL BST is the same as the the insersion in normal 
+    BST exept that ,once inserted , the parent must balance is's children and set the right depth
+*/}
+
+AVLTree.prototype.insert = function (value){
+    let childInsered = false
+    if(value == this.value){
+        return false //should be al unique
+    }else if(value < this.value){
+        if(this.left == null){
+             this.left = new AVLTree(value)
+        childInsered = true
+    }else{
+        childInsered= this.left.insert(value)
+        if(childInsered ==true) this.balance()
+    }
+        } else if(value > this.value){
+            if(this.right == null){
+                this.right = new AVLTree(value)
+                childInsered = true
+            }else{
+                childInsered = this.right.insert(value)
+                if(childInsered == true) this.balance()
+            }
+        }
+       if(childInsered == true) this.setDepthBasedOnChildren()
+       return childInsered
+}

@@ -72,3 +72,25 @@ BinarySearchTree.prototype.remove = function(value){
         return root
     }
 }
+
+//Search 
+BinarySearchTree.prototype.findNode = function(value){
+    let currentRoot = this._root , found = false;
+    while(currentRoot){
+        if(currentRoot.value > value){
+            currentRoot = currentRoot.left
+        }else if(currentRoot.value < value){
+            currentRoot = currentRoot.right
+        }else{
+            //we've found the node
+            found = true
+            break
+        }
+    }
+    return found
+}
+
+let bst = BinarySearchTree()
+bst.insert(1)
+bst.insert(2)
+console.log(bst.findNode(3));

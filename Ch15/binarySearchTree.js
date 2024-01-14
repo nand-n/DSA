@@ -90,7 +90,7 @@ BinarySearchTree.prototype.findNode = function(value){
     return found
 }
 
-let bst = BinarySearchTree()
-bst.insert(1)
-bst.insert(2)
-console.log(bst.findNode(3));
+let bst1 = new BinarySearchTree()
+bst1.insert(1)
+bst1.insert(2)
+console.log(bst1.findNode(2));

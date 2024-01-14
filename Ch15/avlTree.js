@@ -68,3 +68,41 @@ AVLTree.prototype.rotateRR = function(){
     this.left.left =leftBefore
     this.left.value= valueBefore
 }
+
+//double rotation 
+{/**
+    Balancing the tree : 
+        to check the balance if the avl tree , it is simple comparison o fthe left 
+        right children's heights.
+        If the heights are not balanced , rotations are needed.  
+        when the left is bigger than the right , left rotation is done.
+        When Right if bigger than left , right rotation is done.
+*/}
+
+AVLTree.prototype.balance = function(){
+    let ldepth = this.left == null?0 : this.left.depth
+    let rdepth = this.right == null ? 0 : this.right.depth
+
+    if(ldepth > rdepth +1){
+        //LR or LL rotation 
+        let lldepth = this.left.left == null?0:this.left.left.depth
+        let lrdepth = this.left.right == null ? 0 : this.left.right.depth
+
+        if(lldepth<lrdepth){
+            //LR rotatoin consists of a RR rotatoin of the left child 
+            this.left.rotateRR()
+            //plus a LL rotation of the node , which happens anyway
+        }
+        this.rotateLL()
+    }else if(ldepth +1 < rdepth){
+        //RR or RL rotation 
+        let rrdepth = this.right.right == null ? 0 : this.right.right.depth
+        let rldepth = this.right.left ==null?0:this.right.left.depth
+        if(rldepth >rrdepth){
+            //RR rotation consists of a LL rotation of the right child 
+            this.right.rotateLL()
+            //plus a RR rotation of this node , which happens anyway
+        }
+        this.rotateRR()
+    }
+}

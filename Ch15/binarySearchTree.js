@@ -33,4 +33,42 @@ BinarySearchTree.prototype.insert = function(value){
             }
         }
     }
+    
+}
+
+BinarySearchTree.prototype.remove = function(value){
+    return deleteRecursively(this._root , value)
+    function deleteRecursively(root , value){
+        if(!root){
+            return null
+        }
+        else if(value<root.value){
+            root.left = deleteRecursively(root.left , value)
+        }else if(value > root.value){
+            root.right = deleteRecursively(root.right , value)
+        }else{
+           //no child 
+           if(!root.left && !root.right){
+            return null //case 1
+           }else if(!root.left){ //case 2
+             root =root.left
+             return root
+           }else if(!root.right){//case 2
+            root = root.left
+            return root
+           }else{
+            let temp = findMini(root.right) //case 3
+            root.value = temp.value
+            root.right = deleteRecursively(root.right , temp.value)
+            return root
+           }
+        }
+        return root
+    }
+    function findMini(root){
+        while(root.left){
+            root = root.left
+        }
+        return root
+    }
 }

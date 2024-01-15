@@ -28,3 +28,15 @@ graph1.addEdge(2,3, 8);
 graph1.addEdge(3,4, 10);
 graph1.addEdge(4,5, 100);
 graph1.addEdge(1,5, 88);
+
+
+//Removing edges and vertices 
+//To remove an edge from a vertex , look up the edges object for that vetex in this.edges and delte it using js delete operator 
+UndirectedGraph.prototype.removeEdge = function(vertex1 , vertex2){
+    if(this.edges[vertex1] && this.edges[vertex1][vertex2] != undefined){
+        delete this.edges[vertex1][vertex2]
+    }
+    if(this.edges[vertex2] && this.edges[vertex2][vertex1]){
+        delete this.edges[vertex2][vertex1]
+    }
+}

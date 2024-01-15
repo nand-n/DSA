@@ -40,3 +40,10 @@ UndirectedGraph.prototype.removeEdge = function(vertex1 , vertex2){
         delete this.edges[vertex2][vertex1]
     }
 }
+
+UndirectedGraph.prototype.removeVertex = function(vertex){
+    for(let adjecentVertex in this.edges[vertex]){
+        this.removeEdge(adjecentVertex , vertex)
+    }
+    delete this.edges[vertex]
+}

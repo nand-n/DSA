@@ -68,6 +68,6 @@ MinHeap.prototype.bubleUp = function(){
     let index = this.items.length -1
     while(this.parent(index) && this.parent(index) > this.items[index]){
         this.swap(this.parentIndex(index) , index)
-        index = this.parentIndex(index)
+        index = this.parentIndex()
     }
 }

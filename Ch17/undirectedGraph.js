@@ -5,10 +5,10 @@ function UndirectedGraph(){
     this.edges ={}
 }
 
-UndirectedGraph.prototyp.addVertex = function(vertex){
+UndirectedGraph.prototype.addVertex = function(vertex){
     this.edges[vertex] = {}
 }
-UndirectedGraph.prototyp.addEdge = function(vertex1 , vertex2 , weight){
+UndirectedGraph.prototype.addEdge = function(vertex1 , vertex2 , weight){
     if(weight ==undefined){
         weight = 0
     }
@@ -20,7 +20,7 @@ let graph1 = new UndirectedGraph()
 graph1.addVertex(1)
 graph1.addVertex(2);
 graph1.addEdge(1,2, 1);
-graph1.edges;// 1: {2: 0},  2: {1: 0}
+console.log(graph1.edges);// 1: {2: 0},  2: {1: 0}
 graph1.addVertex(3);
 graph1.addVertex(4);
 graph1.addVertex(5);

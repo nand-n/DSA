@@ -44,3 +44,22 @@ Heap.prototype.peek = function(){
 Heap.prototype.size = function(){
     return this.items.length
 }
+
+function MinHeap(){
+    this.items=[]
+}
+MinHeap.prototype = Object.create(Heap.prototype)
+//Insert helpers form heap by copying prototype 
+MinHeap.prototype .bubleDown = function (){
+    let index = 0
+    while(this.leftChild(index) && this.leftChild(index) < this.items[index]){
+        let smallerIndex = this.leftChildIndex(index)
+        if(this.righChild(index) && this.righChild(index) < this.items[smallerIndex]){
+            //if right is samller , right swaps 
+            smallerIndex = this.rightChildIndex(index)
+        }
+        this.swap(smallerIndex , index)
+        index = smallerIndex
+    }  
+}
+

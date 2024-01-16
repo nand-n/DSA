@@ -48,3 +48,6 @@ DirectedGraph.prototype._traverseDFS = function(vertex , visited , fn){
         }
     }
 }
+
+
+export default DirectedGraph

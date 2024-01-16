@@ -1,3 +1,5 @@
+import DirectedGraph from "./directedGraph";
+
 {/**
     Shortest Path algorithm : 
         _extractMin is implemented to compute the neighbouring node
@@ -68,4 +70,4 @@ console.log(digraph1);
 // V: 4,
 // E: 4,
 // edges: { A: { B: 1, D: 1 }, B: { C: 1 }, C: { A: 1 }, D: {} }}
-digraph1.Dijkstra("A"); // { A: 0, B: 1, C: 2, D: 1 }
+console.log(digraph1.Dijkstra("A")); // { A: 0, B: 1, C: 2, D: 1 }

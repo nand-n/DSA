@@ -19,3 +19,17 @@ DirectedGraph.prototype.removeEdge = function(vertex){
     }
     delete this.edges[vertex]
 }
+DirectedGraph.prototype.traverseeBFS = function(vertex , fn){
+    let queue =[] , visited ={}
+    queue.push(vertex)
+    while(queue.length){
+         vertex = queue.shift()
+         if(!visited[vertex]){
+            visited[vertex] = true
+            fn(vertex)
+            for(let adjecentVertex in this.edges[vertex]){
+                queue.push(adjecentVertex)
+            }
+         }
+    }
+}

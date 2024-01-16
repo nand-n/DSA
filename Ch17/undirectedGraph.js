@@ -47,3 +47,4 @@ UndirectedGraph.prototype.removeVertex = function(vertex){
     }
     delete this.edges[vertex]
 }
+

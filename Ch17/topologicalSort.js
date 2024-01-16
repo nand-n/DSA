@@ -26,3 +26,30 @@ DirectedGraph.prototype.topologicalSort = function(){
     }
     return stack
 }
+var g = new DirectedGraph();
+g.addVertex('A');
+g.addVertex('B');
+g.addVertex('C');
+g.addVertex('D');
+g.addVertex('E');
+g.addVertex('F');
+
+g.addEdge('B', 'A');
+g.addEdge('D', 'C');
+g.addEdge('D', 'B');
+g.addEdge('B', 'A');
+g.addEdge('A', 'F');
+g.addEdge('E', 'C');
+var topologicalOrder = g.topologicalSort();
+console.log(g);
+// DirectedGraph {
+// V: 6,
+// E: 6,
+// edges:
+//  { A: { F: 0 },
+//    B: { A: 0 },
+//    C: {},
+//    D: { C: 0, B: 0 },
+//    E: { C: 0 },
+//    F: {} } }
+console.log(topologicalOrder); // [ 'E', 'D', 'C', 'B', 'A', 'F' ]

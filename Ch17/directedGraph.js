@@ -33,3 +33,18 @@ DirectedGraph.prototype.traverseeBFS = function(vertex , fn){
          }
     }
 }
+
+DirectedGraph.prototype.traverseDFS = function(vertex , fn){
+    let visited
+    this._traverseDFS(vertex , visited , fn)
+}
+
+DirectedGraph.prototype._traverseDFS = function(vertex , visited , fn){
+    visited[vertex] = true
+    fn(vertex)
+    for(let adjecentVertex in this.edges[vertex]){
+        if(!visited[adjecentVertex]){
+            this._traverseDFS(adjecentVertex , visited , fn)
+        }
+    }
+}

@@ -47,3 +47,8 @@ function KMP(str , pattern){
     }
     return false
 }
+
+KMP('ababacaababacaababacaababaca', 'ababaca'); //  true
+KMP('sammiebae', 'bae'); //  true
+KMP('sammiebae', 'sammie'); //  true
+KMP('sammiebae', 'sammiebaee'); // false

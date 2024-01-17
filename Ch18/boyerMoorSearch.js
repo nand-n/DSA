@@ -25,7 +25,25 @@ function buildBadMatchTable(str){
 
 function boyerMoor(str , pattern){
     let badMatchTable = buildBadMatchTable(pattern) , offSet =0, patternLastIndex = pattern.length -1,scanIndex = patternLastIndex , maxOffset =str.length -pattern.length;
-    //if the offset is bigger htan maxOffSet , cannot be found 
+    //if the offset is bigger than maxOffSet , cannot be found 
+    while(offSet <= maxOffset){
+        scanIndex = 0
+        while(pattern[scanIndex] == str[scanIndex + offSet]){
+            if(scanIndex == patternLastIndex){
+                //found at this index
+                return offSet
+            }
+            scanIndex++
+        }
+        let badMatchString = str[offSet + patternLastIndex]
+        if(badMatchTable[badMatchString]){
+            //increase the offset if it exists 
+            offSet+= badMatchTable[badMatchString]
+        }else{
+            offSet+=1
+        }
+    }
+    return -1
    
 }
 

@@ -22,6 +22,12 @@ function buildBadMatchTable(str){
     return tableObj
 }
 
+
+function boyerMoor(str , pattern){
+    let badMatchTbale = buildBadMatchTable(pattern) , offSet =0, patternLastIndex = pattern.length -1,scanIndex = patternLastIndex , maxOffset =str.length -pattern.length;
+    
+}
+
 buildBadMatchTable('data');// {d: 3, a: 2, t: 1}
 buildBadMatchTable('struct');// {s: 5, t: 4, r: 3, u: 2, c: 1}
 buildBadMatchTable('roi');// {r: 2, o: 1, i: 3}

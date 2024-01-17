@@ -20,3 +20,30 @@ function longestPrefix(str){
 }
 
 console.log(longestPrefix('ababaca')); // [0, 0, 1, 2, 3, 0, 1]
+
+
+function KMP(str , pattern){
+    //build the prefix table 
+    let prefixTable = longestPrefix(pattern) , patternIndex = 0 , strIndex = 0;
+    while(strIndex <str.length){
+        if(str.charAt(strIndex) != pattern.charAt(patternIndex)){
+            //case 1 : the characters are different 
+            if(patternIndex != 0 ){
+                //use the prefix table if possible 
+                patternIndex = prefixTable[patternIndex -1] 
+            }else{
+                //increment the str index to next character 
+                strIndex++
+            }
+        }else if(str.charAt(strIndex) == pattern[patternIndex -1]){
+            //case 2 the characters are same 
+            strIndex++
+            patternIndex++
+        }
+        //found the pattern 
+        if(patternIndex  = pattern.length){
+            return true
+        }
+    }
+    return false
+}

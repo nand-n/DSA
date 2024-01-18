@@ -24,3 +24,17 @@ RabinKarpSearch.prototype.rabinKarpFingerprintHash = function(str, endLength){
 var rks = new RabinKarpSearch();
 rks.rabinkarpFingerprintHash("sammie"); // 1072559917336
 rks.rabinkarpFingerprintHash("zammie"); // 1072559917343
+
+//
+RabinKarpSearch.prototype.recalculateHash = function(str , oldIndex , newIndex , oldHash , patternLength ){
+    if(patternLength  == null) patternLength = str.length
+    let newHash = oldHash - str.charAtCode(oldIndex)
+
+    newHash =Math.floor(newHash /this.prime)
+
+    newHash+= str.charCodeAt(newIndex) * Math.pow(this.prime , patternLength -1)
+    return newHash
+}
+
+var oldHash = rks.rabinkarpFingerprintHash("sa"); // 9912
+rks.recalculateHash("same", 0, 2, oldHash, "sa".length); //  11106

@@ -13,5 +13,8 @@ function getNthFibo(n){
     Recursive implementation of this algorithm is O(2^n)
     This is an nexponential runtime , which is impractical for 
     real-worled applications. 
-    
+
+    using a hash table once the fibonacci number has been completed 
+    , it can be stored like the following implementation 
 */}
+

@@ -52,3 +52,23 @@ RabinKarpSearch.prototype.strEquals = function(str1 , startIndex1 , endIndex1 , 
     }
     return true
 }
+
+RabinKarpSearch.prototype.rabinkarpSearch = function(str , pattern){
+    let T = str.length , W = pattern.length , 
+    patternHash = this.rabinKarpFingerprintHash(pattern,W),
+    textHash = this.rabinKarpFingerprintHash(str , W);
+    for(let i = 1; i<= T - W + 1; i++){
+        if(patternHash == textHash && this.strEquals(str , i -1 , i+W -2 , pattern , 0 , W-1)){
+            return i-1
+        } 
+        if(i<T-W +1){
+            textHash = this.recalculateHash(str, i  -1 , i+W-1 , textHash , W)
+        }
+    }
+    return -1
+}
+
+// var rks = new RabinKarpSearch();
+rks.rabinkarpSearch("SammieBae", "as"); // -1
+rks.rabinkarpSearch("SammieBae", "Bae"); // 6
+rks.rabinkarpSearch("SammieBae", "Sam"); // 0

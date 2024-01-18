@@ -22,5 +22,5 @@ RabinKarpSearch.prototype.rabinKarpFingerprintHash = function(str, endLength){
 }
 
 var rks = new RabinKarpSearch();
-console.log(rks.rabinkarpFingerprintHash("sammie" )); // 1072559917336
-// rks.rabinkarpFingerprintHash("zammie"); // 1072559917343
+rks.rabinkarpFingerprintHash("sammie"); // 1072559917336
+rks.rabinkarpFingerprintHash("zammie"); // 1072559917343

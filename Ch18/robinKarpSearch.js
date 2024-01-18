@@ -38,3 +38,17 @@ RabinKarpSearch.prototype.recalculateHash = function(str , oldIndex , newIndex ,
 
 var oldHash = rks.rabinkarpFingerprintHash("sa"); // 9912
 rks.recalculateHash("same", 0, 2, oldHash, "sa".length); //  11106
+
+RabinKarpSearch.prototype.strEquals = function(str1 , startIndex1 , endIndex1 , str2 , startIndex2 , endIndex2){
+    if(endIndex1 -startIndex1 != endIndex2 -startIndex2){
+        return false
+    }
+    while(startIndex1 <= endIndex1 && startIndex2 <= endIndex2){
+        if(str1[startIndex1] != str2[startIndex2]){
+            return false
+        }
+        startIndex1++
+        startIndex2++
+    }
+    return true
+}

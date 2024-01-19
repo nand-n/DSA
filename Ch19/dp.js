@@ -28,3 +28,4 @@ function waysToCoverStepsDp(step){
 }
 
 //Timecomplexity : O(n)
+//DP uses caching mechanism to decrease time complexity 

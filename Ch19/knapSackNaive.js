@@ -18,3 +18,21 @@ var weights = [1,2,4,2,5],
     values  = [5,3,5,3,2],
     target = 10;
 knapsackNaive(4,weights, values, target);
+
+//DP Approach
+
+function knapsackDP(index , weights , values , target  , matrixDP){
+    let result =0;
+    //DP part 
+    if(matrixDP[index] + '-' + target){
+        result  =0
+    }else if(weights[index] > target){
+        result = knapsackDP(index -1 , weights , values , target , matrixDP)
+    }else{
+        let current = knapsackDP(index -1 , weights , values , target) ,
+        currentPlusOther = values[index] + knapsackDP(index -1 , weights , values , target - weights[index])
+        result = Math.max(current , currentPlusOther)
+    }
+    matrixDP[index + '-' + target] = result
+    return result
+}

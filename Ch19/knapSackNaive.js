@@ -38,3 +38,4 @@ function knapsackDP(index , weights , values , target  , matrixDP){
 }
 //Time Complexity : O(n*w)
 //n is the number of items  and w is the capacity of the knapsack
+//The algorithm requires an n times w combination to store the cached results inside matrixDP

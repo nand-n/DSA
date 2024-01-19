@@ -37,3 +37,4 @@ function knapsackDP(index , weights , values , target  , matrixDP){
     return result
 }
 //Time Complexity : O(n*w)
+//n is the number of items  and w is the capacity of the knapsack

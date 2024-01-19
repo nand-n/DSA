@@ -13,3 +13,18 @@ function waysToCoverSteps(step){
 waysToCoverSteps(12)
 
 //Time complexity : O(3^n)
+function waysToCoverStepsDp(step){
+    let cache ={} 
+    if(step<0) return 0
+    if(step == 0) return 1
+
+    //check if exist in cache
+    if(cache[step]){
+        return cache[step]
+    }else{
+        cache[step] = waysToCoverStepsDp(step-1) + waysToCoverStepsDp(step -2) +waysToCoverStepsDp(step-3)
+        return cache[step]
+    }
+}
+
+//Timecomplexity : O(n)

@@ -13,3 +13,8 @@ function knapsackNaive(index , weights , values , target){
     }
     return result
 }
+
+var weights = [1,2,4,2,5],
+    values  = [5,3,5,3,2],
+    target = 10;
+knapsackNaive(4,weights, values, target);

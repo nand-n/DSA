@@ -36,3 +36,4 @@ function knapsackDP(index , weights , values , target  , matrixDP){
     matrixDP[index + '-' + target] = result
     return result
 }
+//Time Complexity : O(n*w)

@@ -58,3 +58,4 @@ function longestCommonSequenceLength(str1 , str2){
 }
 
 console.log(longestCommonSequenceLength('abcd' , 'bc'))
+//BIGO : O(m*n)

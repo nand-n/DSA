@@ -27,3 +27,5 @@ function LCSNaive(str1 , str2 , str1Length , str2Length){
 function LCSNaiveWrapper(str1 , srt2){
     return LCSNaive(str1 , srt2 , srt1.length ,srt2.length)
 }
+
+LCSNaiveWrapper('AGGTAB', 'GXTXAYB'); // 4

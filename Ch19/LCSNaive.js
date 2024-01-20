@@ -67,5 +67,7 @@ console.log(longestCommonSequenceLength('abcd' , 'bc'))
 
     This algorithm is helpfull for smaller textt .
     it does not need any pre-processing phase 
-    
+    We can find the substring by checking once for the string. 
+    It also does not occupy extra space to perform the operation.
+
 */}

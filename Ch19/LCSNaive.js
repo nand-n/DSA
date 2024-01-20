@@ -57,4 +57,4 @@ function longestCommonSequenceLength(str1 , str2){
     return max;
 }
 
-longestCommonSequenceLength('abcd' , 'bc')
+console.log(longestCommonSequenceLength('abcd' , 'bc'))

@@ -29,3 +29,12 @@ function LCSNaiveWrapper(str1 , srt2){
 }
 
 console.log(LCSNaiveWrapper('AGGTAB', 'GXTXAYB')); // 4
+
+//DP approach 
+{/**
+    A recurive structure described can ve translated in to a table / cache 
+    where the rows each represent a character in str1 and the columns each represent a
+    character in str2.
+    Each item in a matrix at a row , i , and column , j , represents LCS(str1[0:i] , str2[0:j])
+    
+*/}

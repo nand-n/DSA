@@ -59,3 +59,13 @@ function longestCommonSequenceLength(str1 , str2){
 
 console.log(longestCommonSequenceLength('abcd' , 'bc'))
 //BIGO : O(m*n)
+
+{/**
+    Pattern Searching is an algorithm that involves searching for patterns such as strings , words , images ....
+    Naive pattern searching  is the simplest method amonth other pattern searching algorithmsm. 
+    It checks for all characters of the main string to pattern. 
+
+    This algorithm is helpfull for smaller textt .
+    it does not need any pre-processing phase 
+    
+*/}

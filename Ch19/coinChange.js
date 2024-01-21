@@ -23,3 +23,5 @@ function countCoinWays(coinArr , numCoins , coinValue){
 function countCoinWaysWrapper(coinArr , coinValue){
     return countCoinWays(coinArr , coinArr.length , coinValue)
 }
+
+countCoinWaysWrapper([1,2,3],4);

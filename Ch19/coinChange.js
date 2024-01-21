@@ -49,7 +49,7 @@ function countCoinWaysDP(coinArr , numCoins , coinValue){
             let temp1 =0 , temp2=0;
             if(i-coinArr[j] >=0){
                 //solutions including coinArr[j]
-                temp1 =dpMatrix[i-coinArr[j]][jj]
+                temp1 =dpMatrix[i-coinArr[j]][j]
             }
             if(j>=1){
                 //solutions execuding coinArr[j]

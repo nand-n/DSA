@@ -69,3 +69,5 @@ function countCoinWaysDPWrapper(coinArr , coinValue){
 console.log(countCoinWaysDPWrapper([1,2,3],4));
 
 //BigO : O(m*n)
+//Here m is the number of available types of coins , and n is the 
+//desired currency to convert into change

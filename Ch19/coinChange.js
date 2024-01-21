@@ -65,3 +65,5 @@ function countCoinWaysDP(coinArr , numCoins , coinValue){
 function countCoinWaysDPWrapper(coinArr , coinValue){
     return countCoinWaysDP(coinArr , coinArr.length , coinValue)
 }
+
+countCoinWaysDPWrapper([1,2,3],4);

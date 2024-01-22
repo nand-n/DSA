@@ -95,3 +95,4 @@ function editDistanceDP(str1, str2, length1, length2){
 function editDistanceDPWrapper(str1 , str2){
     return editDistanceDP(str1 , str2 , str1.length , str2.length)
 }
+console.log("DP:" ,editDistanceDPWrapper('sammie','bae'));

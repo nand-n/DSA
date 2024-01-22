@@ -39,13 +39,15 @@ function editDistanceRecursive(str1, str2 , length1 , length2){
     //there are three operations : insert , remove , and replace 
     return 1+ Math.min(
         //insert 
-        editDistanceRecursive(srt1, srt2, length1, length2-1),
+        editDistanceRecursive(str1, str2, length1, length2-1),
         //remove 
-        editDistanceRecursive(str1, srt2, length1-1 , length2),
+        editDistanceRecursive(str1, str2, length1-1 , length2),
         //replace 
         editDistanceRecursive(str1,str2, length1-1 , length2-1) 
     )
 }
-function editDistanceRecursiveWraper (str1,str2){
-    return editDistanceRecursive(srt1,srt2, srt1.length, srt2.length)
+function editDistanceRecursiveWrapper (str1,str2){
+    return editDistanceRecursive(str1,str2, str1.length, str2.length)
 }
+
+console.log(editDistanceRecursiveWrapper('sammie','bae'));

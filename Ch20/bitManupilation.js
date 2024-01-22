@@ -8,3 +8,6 @@ function BitWiseAdd(a, b){
     }
     return a
 }
+
+
+console.log(BitWiseAdd(4,5)); // 9

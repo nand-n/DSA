@@ -51,3 +51,5 @@ function editDistanceRecursiveWrapper (str1,str2){
 }
 
 console.log(editDistanceRecursiveWrapper('sammie','bae'));
+
+//BIGO : O(3^m)

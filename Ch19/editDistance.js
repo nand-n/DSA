@@ -19,3 +19,33 @@
             Replace : for m-1 and n-1
 */}
 
+//Naive approach 
+function editDistanceRecursive(str1, str2 , length1 , length2){
+    //str1 is empty . only option is insert all of str2 
+    if(length1 ==0){
+        return length2
+    }
+    //str2 is empty . only option is insert all of str1
+    if(length2 ==0){
+        return length1
+    }
+
+    //last chars are same 
+    //ignore last chars and count remaining 
+    if(str1[length1-1] == str2[length2-1]){
+        return editDistanceRecursive(str1,str2, length1-1 , length2-1)
+    }
+    //last char is not the same 
+    //there are three operations : insert , remove , and replace 
+    return 1+ Math.min(
+        //insert 
+        editDistanceRecursive(srt1, srt2, length1, length2-1),
+        //remove 
+        editDistanceRecursive(str1, srt2, length1-1 , length2),
+        //replace 
+        editDistanceRecursive(str1,str2, length1-1 , length2-1) 
+    )
+}
+function editDistanceRecursiveWraper (str1,str2){
+    return editDistanceRecursive(srt1,srt2, srt1.length, srt2.length)
+}

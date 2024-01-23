@@ -66,3 +66,4 @@ function BitWiseMultiply(a,b){
     }
     return c
 }
+

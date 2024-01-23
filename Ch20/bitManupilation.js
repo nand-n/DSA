@@ -47,6 +47,9 @@ function BitWiseSubtract(a,b){
     return BitWiseAdd(a,BitwiseNegate(b))
 }
 
+console.log(BitWiseSubtract(4,5)); // -1
+
+
 {/**
     Multiplying numbers in base 2 follows the same logic as multiplying numbers in base
     2; Multiply the numbers , carry anything  over 10 to the next digit and then multiply 
@@ -90,3 +93,4 @@ function BitwiseDividePositive (a,b){
     }
     return c 
 }
+

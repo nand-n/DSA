@@ -67,3 +67,4 @@ function BitWiseMultiply(a,b){
     return c
 }
 
+console.log("Multiplication :",BitWiseMultiply(4,5));

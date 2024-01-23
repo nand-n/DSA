@@ -31,3 +31,22 @@ carry =   (a & b) << 1
 a & b =   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 -> return 9 (a)
 */}
+
+
+//Bitwise Negate
+{/**
+    Creatie Negate funciton using the NOT operator. In Binary , substractin a 
+    negative binary number from  a positive on eis obtained by inverting all the
+    the bits and adding 1. 
+*/}
+function BitwiseNegate(a){
+    return BitWiseAdd(~a,1)
+}
+
+//Bitwise Multiply 
+function BitWiseMultiply(a,b){
+    let m=1, c =0;
+    if(a<0){
+        a =Bit
+    }
+}

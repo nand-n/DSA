@@ -42,6 +42,10 @@ a & b =   0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 function BitwiseNegate(a){
     return BitWiseAdd(~a,1)
 }
+//Subtraction 
+function BitWiseSubtract(a,b){
+    return BitWiseAdd(a,BitwiseNegate(b))
+}
 
 {/**
     Multiplying numbers in base 2 follows the same logic as multiplying numbers in base
@@ -68,3 +72,21 @@ function BitWiseMultiply(a,b){
 }
 
 console.log("Multiplication :",BitWiseMultiply(4,5));
+
+//Division 
+{/** 
+    DIvision can be thought of as the number of times you can  subtract b form a , given a/b
+    example 4/2  4-2-2 =0 .
+*/}
+
+function BitwiseDividePositive (a,b){
+    let c =0;
+    if(b!=0){
+        while(a>=0){
+           
+                a = BitWiseSubtract(a,b)
+                c++
+        }
+    }
+    return c 
+}

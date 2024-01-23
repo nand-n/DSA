@@ -43,10 +43,26 @@ function BitwiseNegate(a){
     return BitWiseAdd(~a,1)
 }
 
+{/**
+    Multiplying numbers in base 2 follows the same logic as multiplying numbers in base
+    2; Multiply the numbers , carry anything  over 10 to the next digit and then multiply 
+    the next digit with the shifted base (in the case of decimals , multiply bu 10 each 
+    time yoiu shift the digit  
+    )
+*/}
 //Bitwise Multiply 
 function BitWiseMultiply(a,b){
     let m=1, c =0;
     if(a<0){
-        a =Bit
+        a =BitwiseNegate(a)
+        b=BitwiseNegate(b)
     }
+    while(a>=m && b){
+        if(a & m ){
+            c = BitWiseAdd(b,c)
+        }
+        b = b<<1
+        m=m<<1
+    }
+    return c
 }

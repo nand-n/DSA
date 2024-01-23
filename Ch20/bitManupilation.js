@@ -94,3 +94,28 @@ function BitwiseDividePositive (a,b){
     return c 
 }
 
+//THis is relativly simple it is only for positive numbers 
+
+function BitwiseDivide(a,b){
+    let c = 0, isNegative =0;
+
+    if(a<0){
+        a = BitwiseNegate(a) //convert to positive
+        isNegative = !isNegative
+    }
+    if(b<0){
+        b = BitwiseNegate(b) //converts to positive
+        isNegative= !isNegative
+    }
+    if(b!=0){
+        while(a>=b){
+            a = BitWiseSubtract(a , b)
+            c++
+        }
+    }
+    if(isNegative){
+        c = BitwiseNegate(c)
+    }
+    return c
+}
+console.log(BitwiseDivide(-10,2));

@@ -119,3 +119,13 @@ function BitwiseDivide(a,b){
     return c
 }
 console.log(BitwiseDivide(-10,2));
+
+{/**
+    & AND   1 when both bits are 1
+|   OR      1 when either bit is 1
+∼   NOT     Inverts all the bits
+^   XOR        1 when only one of the bits is 1
+<<  Left shift  Shifts to the left, and any excess bits are shifted off
+>>Right shiftShifts to the right, and any excess bits are shifted off
+>>>Zero-fill right shiftShifts to the right, and any excess bits are shifted off and the
+**/}

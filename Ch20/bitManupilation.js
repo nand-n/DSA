@@ -118,7 +118,9 @@ function BitwiseDivide(a,b){
     }
     return c
 }
-console.log(BitwiseDivide(-10,2));
+console.log(BitwiseDivide(-10,2));//-5
+console.log(BitwiseDivide(10, 2)); // 5
+console.log(BitwiseDivide(-200, 4)); // -50
 
 {/**
     & AND   1 when both bits are 1
